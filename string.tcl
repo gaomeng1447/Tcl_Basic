@@ -4,32 +4,32 @@ exec tclsh "$0" ${1+"$@"}
 
 #### first #####
 set a [string first ab defabc]
-puts $a
+puts "a is $a"
 
 set str1 "hello_kitty "
-####index#####
+#### index #####
 set b [string index $str1 4]
 set c [string index $str1 end-4]
 puts $b
 puts $c
 
-####length#####
+#### length #####
 set d [string length $str1]
 puts $d
 
-####match#####
-set e [string match {a[b-f]cdef} accdef]
-puts $e
+#### match #####
+set e [string match {a[d-f]cdef} aecdef]
+puts "here, e is: $e"
 
-####range#####
+#### range #####
 set f [string range $str1 0 4]
-puts $f
+puts "f is: $f"
 
-####repeat#####
+#### repeat #####
 set f [string repeat $str1 2]
 puts $f
 
-####replace#####
+#### replace #####
 set f [string replace $str1 0 4 bad]
 puts $f
 
@@ -40,6 +40,18 @@ puts $f
 #### trim #####
 set f [string trim $str1]
 puts $f
+
+#### split #####
+set str1 hello_kitty_I_love_you
+set f [split $str1 "_"]
+puts "split str1: $f"
+puts [string index $f 0]
+puts [string index $f 6]
+
+#### join #####
+set f [join $f _]
+puts $f
+
 
 
 
